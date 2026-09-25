@@ -2,6 +2,7 @@
   <!-- assumes ds4drv is running -->
   <node name="joy_node" pkg="joy" type="joy_node">
     <remap from="joy" to="joy_orig"/>
+    <rosparam command="load" file="$(find joy)/config/joy.yaml"/>
   </node>
   <!-- remap joy to emulate ps3joy mappings -->
   <node name="joy_remap" pkg="joy" type="joy_remap.py">
